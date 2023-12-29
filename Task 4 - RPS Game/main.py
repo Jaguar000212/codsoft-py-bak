@@ -32,6 +32,7 @@ def save_score(winner):
 def reset_scores():
     with open('scores.json', 'w') as f:
         json.dump({'player': 0, 'computer': 0, 'tie': 0}, f)
+    messagebox.showinfo("Done", "Successfully reset scores.")
 
 # Function to get the scores
 def get_scores():
