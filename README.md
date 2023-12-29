@@ -19,3 +19,7 @@ I certify that the code is completely mine and there has been no plagiarism.
 
 - #### Task 5 - Address Book in Python<br>
   An interactive Address Book in Python using Tkinter and used Pillow for image processing, created this program last year and now improved.
+
+---
+
+Use the `launcher.py` to get an easier access to all of my applications.
