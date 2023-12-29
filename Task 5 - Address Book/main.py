@@ -1,4 +1,5 @@
 # Module Imports
+import sys
 try:
     from tkinter import *
     from tkinter import ttk
@@ -8,13 +9,13 @@ try:
 except ModuleNotFoundError:
     print("Required modules, Tkinter and Pillow, aren't installed.\nTry running installer.py or install them using pip.")
     input("Press Enter to exit")
-    quit()
+    sys.exit()
 try:
     from backend.backend import *
 except ModuleNotFoundError:
     print("Backend files are missing. Re-extract the source code or run the command line in same folder as this file.")
     input("Press Enter to exit")
-    quit()
+    sys.exit()
 
 
 # Tkinter object
@@ -69,6 +70,9 @@ def update_view():
 
         for record in fetch.fetchall():
             clist.append(f"{record[0]} {record[1]}")
+
+        if not clist:
+            clist.append('Select Contact')
 
         search['values'] = clist
     except Exception as e:
@@ -186,13 +190,10 @@ def about():
         lines = f.read()
     messagebox.showinfo("About", lines)
 
-def SearchEvent(event):
-    search_query.set("")
-
 
 # Menu bar
 menu = Menu(root)
-menu.add_cascade(label="About", command=lambda: about())  # add about option
+menu.add_cascade(label="About", command=about)  # add about option
 menu.add_cascade(label="Exit", command=root.quit)  # add exit option
 root.config(menu=menu)
 
@@ -351,7 +352,6 @@ search = ttk.Combobox(view_frame0,
                       textvariable=search_query,
                       width=50,
                       values=clist)  # combobox with ability to take text input and search along with list selection
-search.bind("<Button-1>", SearchEvent)
 search.config(font=Font(size=15), background="#be7d53")
 search.pack(side=RIGHT)
 
@@ -367,7 +367,7 @@ Button(view_frame1, text="Home", bg="#be7d53",
        command=lambda: destroy(home_tab, view_tab)).pack(side=LEFT)
 
 Button(view_frame3, text="Delete", bg="#be7d53",
-       command=lambda: delete_data()).pack(side=LEFT)
+       command=delete_data).pack(side=LEFT)
 Button(view_frame3, text="Edit", bg="#be7d53",
        command=lambda: [destroy(edit_tab, view_tab), edit_data(new_profile_image)]).pack(side=LEFT)
 

@@ -4,6 +4,6 @@ from os import system
 
 print("Installing required python libraries.\n1. Tkinter\n2. Pillow\n")
 
-system("py -m pip install tk pillow")
+system("python -m pip install tk pillow")
 
 input("\nSuccessfully installed...\nPress Enter to exit the installer.")

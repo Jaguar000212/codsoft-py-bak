@@ -12,7 +12,7 @@ class InvalidData(Exception):
 
 try:
     # connect to databse, will be created if not present
-    database = sqlite3.connect(f'./backend/AddressBook.db')
+    database = sqlite3.connect('./backend/AddressBook.db')
 
     # create table if not present in database
     database.execute(
@@ -32,10 +32,9 @@ def retrieve_data(SNo, pfp=False):
     record = fetch.fetchone()
     # creating string from fetch data to used in label
     data += f"First Name - {record[1]}\nLast Name - {record[2]}\n     Gender - {record[3]}\n       E-Mail - {record[4]}\n Phone No. - {record[5]}\n    Address - {record[6]}\n"
-    if pfp == False:
+    if pfp is False:
         return data
-    else:
-        return [data, record[7]]
+    return [data, record[7]]
 
 
 def retrieve_all_data(SNo):
