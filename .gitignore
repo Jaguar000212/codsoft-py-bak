@@ -1,7 +1,4 @@
-
-.idea/codsoft.iml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/misc.xml
-.idea/vcs.xml
-.idea/modules.xml
-.idea/workspace.xml
+.idea/
+.vs/
+Task 5 - Address Book/backend/AddressBook.db
+__pycache__/
