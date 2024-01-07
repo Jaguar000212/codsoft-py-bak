@@ -23,3 +23,7 @@ I certify that the code is completely mine and there has been no plagiarism.
 ---
 
 Use the `launcher.py` to get an easier access to all of my applications.
+
+---
+
+⭐ From [Jaguar000212](https://www.github.com/Jaguar000212)
